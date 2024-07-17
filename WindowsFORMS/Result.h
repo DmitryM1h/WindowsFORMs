@@ -58,7 +58,7 @@ namespace summerpr {
 
 	private: System::Windows::Forms::TextBox^ textBox7;
 	private: System::Windows::Forms::Label^ label3;
-	private: System::Windows::Forms::SaveFileDialog^ saveFileDialog1;
+
 
 	private: System::Windows::Forms::Button^ button6;
 	private: System::Windows::Forms::Button^ button7;
@@ -116,7 +116,6 @@ namespace summerpr {
 			this->textBox6 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox7 = (gcnew System::Windows::Forms::TextBox());
 			this->label3 = (gcnew System::Windows::Forms::Label());
-			this->saveFileDialog1 = (gcnew System::Windows::Forms::SaveFileDialog());
 			this->button6 = (gcnew System::Windows::Forms::Button());
 			this->button7 = (gcnew System::Windows::Forms::Button());
 			this->button3 = (gcnew System::Windows::Forms::Button());
@@ -269,7 +268,6 @@ namespace summerpr {
 			this->textBox7->Name = L"textBox7";
 			this->textBox7->Size = System::Drawing::Size(295, 31);
 			this->textBox7->TabIndex = 17;
-			this->textBox7->TextChanged += gcnew System::EventHandler(this, &Results::textBox7_TextChanged);
 			// 
 			// label3
 			// 
@@ -281,10 +279,6 @@ namespace summerpr {
 			this->label3->Size = System::Drawing::Size(124, 25);
 			this->label3->TabIndex = 18;
 			this->label3->Text = L"ָלÿ פאיכא";
-			// 
-			// saveFileDialog1
-			// 
-			this->saveFileDialog1->DefaultExt = L"txt";
 			// 
 			// button6
 			// 
@@ -552,10 +546,7 @@ namespace summerpr {
 
 	}
 	
-	private: System::Void textBox7_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-		saveFileDialog1->FileName = textBox7->Text;
-
-	}
+	
 	private: System::Void button6_Click(System::Object^ sender, System::EventArgs^ e) {
 		filename = textBox7->Text + ".txt";
 		if (String::IsNullOrEmpty(textBox7->Text))
@@ -570,7 +561,6 @@ namespace summerpr {
 	}
 	private: System::Void button7_Click(System::Object^ sender, System::EventArgs^ e) {
 		textBox7->Clear();
-		saveFileDialog1->FileName = "";
 		this->button6->UseVisualStyleBackColor = true;
 		pressed1 = 0;
 

@@ -29,11 +29,20 @@ public:
 		head = 0;
 	}
 
-	void addToHead(Student stud) {
+	/*void add(Student stud) {
 		Node* p = new Node(stud);
-		p->next = head;
-		head = p;
-	}
+		if (stud.getAverageMark() == 4) {
+			if (endSorted == 0) {
+				endSorted = p;
+			}
+			p->next = head;
+			head = p;
+		}
+		else {
+			p->next = endSorted->next;
+			endSorted->next = p;
+		}
+	} */
 
 	void deleteFromHead() {
 		Node* p = head;
@@ -55,7 +64,7 @@ public:
 		if (in.is_open()) {
 			Student stud;
 			if (in >> stud) {
-				addToHead(stud);
+				//addToHead(stud);
 			}
 		}
 	}
